@@ -1,19 +1,26 @@
-<img scr="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpt.dreamstime.com%2Fprograma%25C3%25A7%25C3%25A3o-de-software-aprende-codifica%25C3%25A7%25C3%25A3o-linguagem-tecnologia-e-inova%25C3%25A7%25C3%25A3o-n%25C3%25BAmeros-queda-image120301681&psig=AOvVaw2Ef0V7-znPfEN0PTS1rp4G&ust=1711076523355000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKjq7fSuhIUDFQAAAAAdAAAAABAE" width='600px' height='200px/>
 
-#--projeto iniciando um plano de estudo 
-###dai resolvi faser tudo do zero agora com readm porjeto uma API con nodejs
+<img src="https://img.freepik.com/fotos-gratis/conceito-de-controle-de-qualidade-padrao-m_23-2150041861.jpg?size=626&ext=jpg&ga=GA1.1.538709957.1705057291&semt=sph" width='400' height='200'>
 
-##my configuration:
+ 🧰  projeto basico de um API mas com nova **funcionalidades** 
 
-###--fastify
-###--knex
-###--sqlite3
-###--typescript 
-###--node
-###--tsx 
-###--@type/node 
-###--eslint
-###--@rocketseat/eslint-confg -d e uma configuraçao propria da rocketseat. 
-###--crieu um script como "dev": "tsx watch src/app.ts" para o servidor nunca para de rodar. 
-###--abilitei slint la no settings.json com source.fixAll.eslint": 
-###"explicit" para sempre corrigir erros ao executar um codigo antye de ir para a produçao.
+✒️ Dai resolvi faser tudo do zero agora com readm porjeto uma API con nodejs
+
+## my configuration:
+* [fastify](https://fastify.dev/)  :  Usado para criar rotas 
+* [knex](https://knexjs.org/)   :  criar schimas simples pelo vscode
+* [sqlite3](https://www.sqlite.org/)  :  banco de dados
+* [typescript](https://www.typescriptlang.org/) :  bom considero uma linguagem de programaçao 
+* [node](https://nodejs.org/en)  :  tipo um motor js para ser usado fora do navegador
+* [tsx](https://www.npmjs.com/package/tsx) :  tipo uma istençao jsx
+* [@type/node](https://www.npmjs.com/package/@types/node) :  ajuda o node reconhecer o typescript
+* [eslint](https://eslint.org/) :  uma ferramenta que ajuda com erros de codigos e padronisaçoes
+---
+* ***@rocketseat/eslint-confg -d*** e uma configuraçao propria da rocketseat.
+* crieu um script como "dev": "tsx watch src/app.ts" para o servidor nunca para de rodar.
+* abilitei slint la no settings.json com source.fixAll.eslint":
+* "explicit" para sempre corrigir erros ao executar um codigo antye de ir para a produçao.
+
+```bash
+
+```
+## <b> escrito por _mauricio-fernandes_ </b>
