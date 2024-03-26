@@ -17,6 +17,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/app.ts",
+    "knex": "node --no-warnings  --import tsx ./node_modules/.bin/knex",
     "lint": "eslint src --ext .ts --fix"
   },
   "keywords": [],
