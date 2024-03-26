@@ -1,6 +1,7 @@
 import fastify from 'fastify'
 import { knex } from './database'
 import { randomUUID } from 'crypto'
+import { env } from './env'
 
 const app = fastify()
 
@@ -24,6 +25,6 @@ app.get('/', async () => {
   return transactions
 })
 
-app.listen({ port: 3333 }).then(() => {
+app.listen({ port: env.PORT }).then(() => {
   console.log('lets.. go watch')
 })
