@@ -1,24 +1,26 @@
 import fastify from 'fastify'
 import { env } from './env'
-import { transactionsRouter } from './routes/transactions'
+import { randomUUID } from 'crypto'
+import knex from 'knex'
+// import { transactionsRouter } from './routes/transactions'
 
 const app = fastify()
 
-app.register(transactionsRouter, {
-  prefix: 'transactions',
-})
-
-// app.get('/', async () => {
-//   const transactions = await knex('transactions')
-//     .insert({
-//       id: randomUUID(),
-//       title: 'Transaçao2 sengindo tets',
-//       amount: 2000,
-//     })
-//     .returning('*')
-
-//   return transactions
+// app.register(transactionsRouter, {
+//   prefix: 'transactions',
 // })
+
+app.get('/', async () => {
+  const transactions = await knex('transactions')
+    .insert({
+      id: randomUUID(),
+      title: 'Transaçao2 sengindo tets',
+      amount: 2000,
+    })
+    .returning('*')
+
+  return transactions
+})
 
 // app.get('/', async () => {
 //   const transactions = await knex('transactions')
@@ -28,6 +30,6 @@ app.register(transactionsRouter, {
 //   return transactions
 // })
 
-app.listen({ port: env.PORT }).then(() => {
+app.listen({ port: env.PORT || 3000 }).then(() => {
   console.log('lets.. go watch')
 })
