@@ -14,7 +14,7 @@ export async function transactionsRouter(app: FastifyInstance) {
     const { title, amount, type } = createTransactionsBorySchema.parse(
       request.body,
     )
-    await knex('transactions').insert({
+    await knex('trasnactions').insert({
       id: randomUUID(),
       title,
       amount: type === 'credit' ? amount : amount * -1,
