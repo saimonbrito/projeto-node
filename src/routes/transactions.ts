@@ -1,16 +1,19 @@
 import { FastifyInstance } from 'fastify'
 import { knex } from '../database'
 import { z } from 'zod'
-import { randomUUID } from 'crypto'
+import { randomUUID } from 'node:crypto'
 import { checkSessionIdexist } from '../middewares/check-session-id-exist'
 
 export async function transactionsRouter(app: FastifyInstance) {
+  app.addHook('preHandler', async (request) => {
+    console.log(`[${request.method}] ${request.url}`)
+  })
   app.get(
     '/',
     {
       preHandler: [checkSessionIdexist],
     },
-    async (request, reply) => {
+    async (request) => {
       const { sessionId } = request.cookies
 
       const transactions = await knex('transactions')
@@ -70,7 +73,7 @@ export async function transactionsRouter(app: FastifyInstance) {
       request.body,
     )
 
-    let sessionId = request.cookies.sessionid
+    let sessionId = request.cookies.sessionId
 
     if (!sessionId) {
       sessionId = randomUUID()
@@ -84,6 +87,7 @@ export async function transactionsRouter(app: FastifyInstance) {
       id: randomUUID(),
       title,
       amount: type === 'credit' ? amount : amount * -1,
+      session_id: sessionId,
     })
     return reply.status(201).send()
   })

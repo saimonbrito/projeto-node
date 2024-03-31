@@ -1,14 +1,6 @@
-import fastify from 'fastify'
 import { env } from './env'
-import cookie from '@fastify/cookie'
-import { transactionsRouter } from './routes/transactions'
-
-const app = fastify()
-
-app.register(cookie)
-app.register(transactionsRouter, {
-  prefix: 'transactions',
-})
+import server from 'supertest'
+import { app } from './server'
 
 // app.get('/', async () => {
 //   const transactions = await knex('transactions')
