@@ -34,7 +34,7 @@ export async function transactionsRouter(app: FastifyInstance) {
         id: z.string().uuid(),
       })
 
-      const { id } = getTransctionsParamsSchema.parse(request.body)
+      const { id } = getTransctionsParamsSchema.parse(request.params)
       const { sessionId } = request.cookies
       const transaction = await knex('transactions')
         .where({
@@ -54,7 +54,7 @@ export async function transactionsRouter(app: FastifyInstance) {
     async (request) => {
       const { sessionId } = request.cookies
 
-      const summary = await knex('transaction')
+      const summary = await knex('transactions')
         .where('session_id', sessionId)
         .sum('amount', { as: 'amount' })
         .first()
@@ -83,7 +83,7 @@ export async function transactionsRouter(app: FastifyInstance) {
         maxAge: 60 * 60 * 24 * 7, // 7 days
       })
     }
-    await knex('trasnactions').insert({
+    await knex('transactions').insert({
       id: randomUUID(),
       title,
       amount: type === 'credit' ? amount : amount * -1,

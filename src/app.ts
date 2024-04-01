@@ -1,5 +1,4 @@
 import { env } from './env'
-import server from 'supertest'
 import { app } from './server'
 
 // app.get('/', async () => {
